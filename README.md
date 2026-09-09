@@ -1,220 +1,297 @@
-# sentiment-analysis
-Sentiment Analysis using Hugging Face and Streamlit
-A simple web-based Sentiment Analysis application that uses a pre-trained Hugging Face Transformer model to identify whether a given sentence expresses a Positive or Negative sentiment.
+# Sentiment Analysis using Streamlit & Hugging Face
 
-The application provides the predicted sentiment along with the model's confidence score through an interactive Streamlit interface.
+## Project Overview
 
-Project Overview
-This project demonstrates how Natural Language Processing (NLP) and Transformer-based models can be integrated into a lightweight web application.
+This project is a simple and interactive **Sentiment Analysis Web Application** built using **Python, Streamlit, and Hugging Face Transformers**.
 
-The user enters a sentence into the application. The text is then passed to a pre-trained sentiment-analysis model from Hugging Face. The model analyzes the text and returns:
+The application analyzes a given sentence and determines whether the sentiment expressed in the text is **Positive** or **Negative**. It also displays the confidence score of the prediction.
 
-Sentiment label: Positive or Negative
-Confidence score of the prediction
-The result is displayed immediately through the Streamlit interface.
+This project demonstrates how Natural Language Processing (NLP) and pre-trained Transformer models can be integrated into a user-friendly web application.
 
-Key Features
-Interactive web interface using Streamlit
-Pre-trained Transformer model from Hugging Face
-Positive and Negative sentiment classification
-Confidence score displayed as a percentage
-Input validation for empty text
-Model caching using Streamlit's st.cache_resource
-No model training required
-Simple and lightweight NLP application
-Technologies and Tools
-Technology / Tool	Purpose
-Python	Core programming language
-Streamlit	Creates the interactive web application
-Hugging Face Transformers	Provides the pre-trained NLP model
-DistilBERT	Performs sentiment classification
-PyTorch	Backend used by the Transformer pipeline
-VS Code	Development environment
-Git & GitHub	Version control and project hosting
-AI Model
-This project uses:
+---
 
-Model: distilbert-base-uncased-finetuned-sst-2-english
+## Project Objective
 
-This is a fine-tuned DistilBERT model designed for sentiment classification using the Stanford Sentiment Treebank (SST-2) dataset.
+The main objective of this project is to create a simple web application that can automatically identify the sentiment of a given piece of text.
 
-The model predicts two classes:
+The application can be used to understand whether a sentence expresses:
 
-POSITIVE
-NEGATIVE
-The model also returns a confidence score representing how confident it is in the prediction.
+* Positive Sentiment
+* Negative Sentiment
 
-How the Application Works
-The application follows a simple NLP workflow:
+Along with the sentiment, the application also provides the **confidence percentage** of the prediction.
 
-User enters a sentence
-          |
-          v
-   Streamlit Interface
-          |
-          v
-     Text Validation
-          |
-          v
- Hugging Face Pipeline
-          |
-          v
-    DistilBERT Model
-          |
-          v
- Sentiment Prediction
-          |
-          v
- Positive / Negative
-          |
-          v
- Confidence Score
-          |
-          v
-   Result displayed
-Workflow Explanation
-1. User Input
+---
 
-The user enters a sentence into the Streamlit text area.
+## Features
 
-2. Input Validation
+* AI-powered sentiment analysis
+* User-friendly text input area
+* Positive sentiment detection
+* Negative sentiment detection
+* Confidence score display
+* Fast prediction using a pre-trained Hugging Face model
+* Interactive web interface using Streamlit
+* Simple and beginner-friendly implementation
+* Efficient model loading using Streamlit caching
 
-The application checks whether the user has entered any text.
+---
 
-If the input is empty, a warning message is displayed.
+## Technologies Used
 
-3. Model Processing
+### Python
 
-The input text is passed to the Hugging Face sentiment-analysis pipeline.
+Python is used as the main programming language for developing the application.
 
-4. Sentiment Classification
+### Streamlit
 
-The DistilBERT model analyzes the sentence and predicts either Positive or Negative sentiment.
+Streamlit is used to create the interactive web interface without requiring HTML, CSS, or JavaScript.
 
-5. Confidence Calculation
+### Hugging Face Transformers
 
-The model provides a confidence score for its prediction.
+The Hugging Face Transformers library is used to load and run the pre-trained sentiment analysis model.
 
-6. Result Display
+### DistilBERT
 
-Streamlit displays the predicted sentiment and confidence percentage on the web interface.
-<img width="685" height="329" alt="image" src="https://github.com/user-attachments/assets/def1d05c-abd7-442d-8b48-1044f2922ebd" />
+The project uses the following pre-trained model:
 
-Important Functions Used
-st.set_page_config()
-Configures the Streamlit page, including:
+`distilbert-base-uncased-finetuned-sst-2-english`
 
-Page title
-Page icon
-Browser tab settings
-st.set_page_config(
-    page_title="Sentiment Analysis",
-    page_icon="..."
-)
-st.title()
-Displays the main title of the application.
+This model is a fine-tuned DistilBERT model designed for English sentiment classification.
 
-st.text_area()
-Provides a text box where users can enter sentences for analysis.
+---
 
-st.button()
-Creates the Analyze Sentiment button that starts the prediction process.
+## How the Project Works
 
-st.cache_resource
-Caches the loaded AI model so that Streamlit does not reload the model every time the application changes or the user interacts with it.
+The application follows these basic steps:
 
-This improves application performance.
+1. The user opens the Streamlit application.
+2. The user enters a sentence in the text area.
+3. The user clicks the **Analyze Sentiment** button.
+4. The Hugging Face sentiment analysis pipeline processes the text.
+5. The model predicts the sentiment.
+6. The application displays the sentiment label and confidence score.
+7. A positive or negative message is displayed based on the prediction.
 
-pipeline()
-The Hugging Face pipeline() function provides a simple interface for performing sentiment analysis using a pre-trained Transformer model.
+---
 
-pipeline(
-    "sentiment-analysis",
-    model="distilbert-base-uncased-finetuned-sst-2-english"
-)
-sentiment_model(text)
-Sends the user's text to the trained model and receives the prediction.
+## Project Structure
 
-st.success() and st.error()
-These functions display different result messages depending on whether the sentiment is Positive or Negative.
-
-Project Structure
-sentiment-analysis/
+```text
+Sentiment-Analysis/
 │
 ├── app.py
-├── requirements.txt
-└── README.md
-Files
-app.py
+├── README.md
+└── requirements.txt
+```
 
-Contains the complete Streamlit application, model loading, input handling, prediction logic, and result display.
+---
 
-requirements.txt
+## Required Libraries
 
-Contains the Python dependencies required to run the project.
+The project requires the following Python libraries:
 
-README.md
+```text
+streamlit
+transformers
+torch
+```
 
-Provides project documentation and setup instructions.
+You can install the required packages using:
 
-Installation
-1. Clone the Repository
-git clone https://github.com/your-username/sentiment-analysis.git
-2. Open the Project Folder
-cd sentiment-analysis
-3. Install Dependencies
-pip install -r requirements.txt
-4. Run the Application
+```bash
+pip install streamlit transformers torch
+```
+
+---
+
+## How to Run the Project
+
+### Step 1: Clone the Repository
+
+Clone the GitHub repository to your computer.
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_LINK
+```
+
+### Step 2: Open the Project Folder
+
+```bash
+cd Sentiment-Analysis
+```
+
+### Step 3: Install Dependencies
+
+Run:
+
+```bash
+pip install streamlit transformers torch
+```
+
+### Step 4: Run the Streamlit Application
+
+Run the following command:
+
+```bash
 streamlit run app.py
-Streamlit will start the application and provide a local URL in the terminal.
+```
 
-Example
-Input
+### Step 5: Open the Application
+
+After running the command, Streamlit will provide a local URL.
+
+Usually, it will look like:
+
+```text
+http://localhost:8501
+```
+
+Open this URL in your web browser to access the application.
+
+---
+
+## Example
+
+### Input
+
+```text
 I really enjoyed this movie!
-Output
+```
+
+### Output
+
+```text
+Positive Sentiment
+
 Sentiment: POSITIVE
 Confidence: 99.XX%
-Another example:
+```
 
-The service was extremely disappointing.
-Output:
+---
+
+### Another Example
+
+### Input
+
+```text
+I did not like this product.
+```
+
+### Output
+
+```text
+Negative Sentiment
 
 Sentiment: NEGATIVE
 Confidence: XX.XX%
-<img width="886" height="770" alt="image" src="https://github.com/user-attachments/assets/74565e9a-57b7-4675-9cd3-fed339908b6e" />
+```
 
-Limitations
-The model only predicts Positive and Negative sentiment.
-It may not correctly understand sarcasm or highly ambiguous statements.
-Prediction accuracy can vary depending on the wording and context of the input.
-The model is specifically fine-tuned for English sentiment classification.
-Future Improvements
-Possible improvements include:
+---
 
-Add Neutral sentiment classification
-Support multiple languages
-Analyze multiple sentences or documents
-Add sentiment history
-Visualize sentiment confidence
-Add batch CSV sentiment analysis
-Deploy the application online
-Add charts for sentiment statistics
-Improve the user interface
-Add an API layer for external applications
-Learning Outcomes
-Through this project, the following concepts are demonstrated:
+## Model Information
 
-Natural Language Processing
-Transformer-based NLP models
-Hugging Face Transformers
-Pre-trained AI models
-Streamlit application development
-Model inference
-Confidence scores
-Python application development
-Git and GitHub project management
-Conclusion
-This project demonstrates how a pre-trained Transformer model can be integrated with Streamlit to create a practical NLP application.
+This project uses the following pre-trained model:
 
-Instead of training a machine-learning model from scratch, the application uses an existing fine-tuned DistilBERT model and focuses on model inference, user interaction, and result visualization.
+**Model:** `distilbert-base-uncased-finetuned-sst-2-english`
+
+The model is based on **DistilBERT**, a smaller and faster version of BERT. It has been fine-tuned for sentiment classification using the **SST-2 (Stanford Sentiment Treebank)** dataset.
+
+The model classifies English text into two categories:
+
+* `POSITIVE`
+* `NEGATIVE`
+
+The model also provides a confidence score for its prediction.
+
+---
+
+## Confidence Score
+
+The confidence score represents how confident the model is about its prediction.
+
+For example:
+
+```text
+Sentiment: POSITIVE
+Confidence: 98.50%
+```
+
+This means the model is approximately **98.50% confident** that the given sentence expresses a positive sentiment.
+
+---
+
+## User Interface
+
+The application provides a simple interface containing:
+
+* Project title
+* Project description
+* Text input area
+* Analyze Sentiment button
+* Result section
+* Sentiment classification
+* Confidence percentage
+
+The interface is designed to be simple and easy to use.
+
+---
+
+## Future Enhancements
+
+The project can be improved in the future by adding:
+
+* Sentiment analysis charts
+* Positive and negative probability graphs
+* Analysis of multiple sentences
+* CSV file upload
+* Chat-style sentiment analysis
+* Support for multiple languages
+* Improved responsive user interface
+* Sentiment analysis history
+* Downloadable analysis reports
+
+---
+
+## Limitations
+
+* The current model is mainly designed for English text.
+* It classifies the input into only positive or negative sentiment.
+* Sarcasm and complex expressions may not always be classified correctly.
+* The prediction depends on the quality and context of the input text.
+* The first model loading may take some time because the pre-trained model needs to be downloaded.
+
+---
+
+## Learning Outcomes
+
+By completing this project, the following concepts can be learned:
+
+* Basics of Natural Language Processing
+* Sentiment Analysis
+* Using Hugging Face Transformers
+* Working with pre-trained AI models
+* Creating web applications using Streamlit
+* Using Python libraries for AI applications
+* Handling user input
+* Displaying AI prediction results
+* Understanding model confidence scores
+
+---
+
+## Conclusion
+
+The **Sentiment Analysis using Streamlit & Hugging Face** project demonstrates how a pre-trained Natural Language Processing model can be integrated into a simple web application.
+
+The project provides an easy way for users to enter text and receive an AI-generated sentiment prediction along with its confidence score.
+
+This project is suitable for beginners who are interested in learning about **Python, Artificial Intelligence, Natural Language Processing, Hugging Face, and Streamlit**.
+
+---
+
+## Author
+
+**Keerthana**
+
+B.Sc. Computer Science with Artificial Intelligence
 
