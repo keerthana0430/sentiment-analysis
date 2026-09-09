@@ -98,7 +98,8 @@ The model provides a confidence score for its prediction.
 6. Result Display
 
 Streamlit displays the predicted sentiment and confidence percentage on the web interface.
-https://www.google.com/search?q=sentiment+analysis+workflow&sca_esv=e051c0c7f05650e9&rlz=1C1ONGR_enIN1226&udm=2&biw=1280&bih=585&sxsrf=APpeQnvbh5h1Envf6_6Mn8pxuCKUZD47Iw%3A1788965013134&ei=lXChasjeB8GYhvcPxoZt&ved=2ahUKEwiI_f2A3uGWAxVBjOEIHUZDGwAQ4dUDegQIBhAN&uact=5&oq=sentiment+analysis+workflow&gs_lp=Egtnd3Mtd2l6LWltZyIbc2VudGltZW50IGFuYWx5c2lzIHdvcmtmbG93MgUQABiABDIEEAAYHjIGEAAYBRgeSPcnUKoGWIkfcAF4AJABAJgBgAKgAf8MqgEFMC40LjS4AQPIAQD4AQGYAgOgAoAEwgIGEAAYCBgewgIGEAAYBxgemAMAiAYBkgcFMS4wLjKgB98JsgcDMi0yuAf9A8IHBTAuMi4xyAcIgAgB&sclient=gws-wiz-img#sv=CAMSURoyKhBlLWNWaDFHMFZGN0RLc05NMg5jVmgxRzBWRjdES3NOTToOV1pBbGxJOUtZdFNRbU0gBCoXCgFzEhBlLWNWaDFHMFZGN0RLc05NGAEwARgHIIu905YKSggQARgBIAEoAQ
+<img width="685" height="329" alt="image" src="https://github.com/user-attachments/assets/def1d05c-abd7-442d-8b48-1044f2922ebd" />
+
 Important Functions Used
 st.set_page_config()
 Configures the Streamlit page, including:
@@ -180,7 +181,8 @@ Output:
 
 Sentiment: NEGATIVE
 Confidence: XX.XX%
-https://www.google.com/search?sca_esv=e051c0c7f05650e9&rlz=1C1ONGR_enIN1226&sxsrf=APpeQnv45z-PPvETCFO92TW7OVq9vvkaWA:1788965305626&q=flowchart+Application+Workflow&uds=AJ5uw1_a2D0D09lxm8gpKKOTUn4rmQD1vnvaXh5kfOBKMW7ukJ30_fMdAEEfzLXecn-ululIe0CVCuWIWReRumwthvvfI7fC0K6buTrSsS9aSpo8ZmnKjaUbiYyOwXP1UIz1KJ4hHDmVInlrGPnHCGnVkjiZZe3FCBN-tSS7-C2bxakMrNjXs3s&udm=2&sa=X&ved=2ahUKEwjOnbqM3-GWAxUtjeEIHYjhNz4QxKsJKAF6BAgYEAE&ictx=0&biw=1280&bih=585&dpr=1.5#sv=CAMSURoyKhBlLUFRd1lkcmF6TjhtWkFNMg5BUXdZZHJhek44bVpBTToONTktRE1sQVplNXBPYk0gBCoXCgFzEhBlLUFRd1lkcmF6TjhtWkFNGAEwARgHIJTe3YEESggQARgBIAEoAQ
+<img width="886" height="770" alt="image" src="https://github.com/user-attachments/assets/74565e9a-57b7-4675-9cd3-fed339908b6e" />
+
 Limitations
 The model only predicts Positive and Negative sentiment.
 It may not correctly understand sarcasm or highly ambiguous statements.
